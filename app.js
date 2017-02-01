@@ -2,6 +2,7 @@
 var http = require("http");
 
 //Include the fs module. FS = file system. It is part of core.
+//fs gives us access to the file system
 var fs = require("fs");
 
 
@@ -9,7 +10,7 @@ function renderHomePage(req, res){
 	//Pass req and res to make sure res isn't undefined
 	res.writeHead(200,{'content-type':'text/html'});
 	//"Go and read the file from Sync called homePage.html"
-	//You're not sending the file! You read the file and then send the contents along
+	//You're not sending the file! You read the file and then send the contents along. You're actually sending a bunch of text.
 	var theHomePageHTML = fs.readFileSync('homePage.html');
 	res.end(theHomePageHTML);
 
